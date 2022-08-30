@@ -15,19 +15,19 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "aeropuertos")
+@Table(name = "Aeropuerto")
 public class Aeropuerto {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer AeropuertoID;
+	private Integer aeropuertoid;
 
-	@Column
-	private String Nombre;
+	@Column(length = 50)
+	private String nombre;
 	
 	@ManyToOne
-	@JoinColumn(name = "CiudadID", nullable = false, foreignKey = @ForeignKey(foreignKeyDefinition = "foreign key(CiudadID) references ciudades(CiudadID)"))
+	@JoinColumn(name = "ciudadid", nullable = false, foreignKey = @ForeignKey(foreignKeyDefinition = "foreign key(ciudadid) references ciudad(ciudadid)"))
 	private Ciudad ciudad;
-	
 	
 	@OneToMany(mappedBy = "aeropuerto")
 	private Collection<Vuelo> itemsvuelo = new ArrayList<>();
@@ -36,33 +36,32 @@ public class Aeropuerto {
 	private Collection<Reserva> itemsreserva = new ArrayList<>();
 	
 	public Aeropuerto() {
-		// TODO Auto-generated constructor stub
 	}
 
-	public Aeropuerto(Integer aeropuertoID, String nombre, Ciudad ciudad, Collection<Vuelo> itemsvuelo,
+	public Aeropuerto(Integer aeropuertoid, String nombre, Ciudad ciudad, Collection<Vuelo> itemsvuelo,
 			Collection<Reserva> itemsreserva) {
 		super();
-		AeropuertoID = aeropuertoID;
-		Nombre = nombre;
+		this.aeropuertoid = aeropuertoid;
+		this.nombre = nombre;
 		this.ciudad = ciudad;
 		this.itemsvuelo = itemsvuelo;
 		this.itemsreserva = itemsreserva;
 	}
 
-	public Integer getAeropuertoID() {
-		return AeropuertoID;
+	public Integer getAeropuertoid() {
+		return aeropuertoid;
 	}
 
-	public void setAeropuertoID(Integer aeropuertoID) {
-		AeropuertoID = aeropuertoID;
+	public void setAeropuertoid(Integer aeropuertoid) {
+		this.aeropuertoid = aeropuertoid;
 	}
 
 	public String getNombre() {
-		return Nombre;
+		return nombre;
 	}
 
 	public void setNombre(String nombre) {
-		Nombre = nombre;
+		this.nombre = nombre;
 	}
 
 	public Ciudad getCiudad() {
@@ -72,24 +71,12 @@ public class Aeropuerto {
 	public void setCiudad(Ciudad ciudad) {
 		this.ciudad = ciudad;
 	}
-
-	public Collection<Vuelo> getItemsvuelo() {
-		return itemsvuelo;
-	}
-
+	
 	public void setItemsvuelo(Collection<Vuelo> itemsvuelo) {
 		this.itemsvuelo = itemsvuelo;
-	}
-
-	public Collection<Reserva> getItemsreserva() {
-		return itemsreserva;
 	}
 
 	public void setItemsreserva(Collection<Reserva> itemsreserva) {
 		this.itemsreserva = itemsreserva;
 	}
-
-	
-	
-
 }

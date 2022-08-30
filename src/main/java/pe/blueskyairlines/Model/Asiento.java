@@ -1,6 +1,5 @@
 package pe.blueskyairlines.Model;
 
-
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -13,45 +12,43 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "asientos")
+@Table(name = "Asiento")
 public class Asiento {
-	
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer AsientoID;
+	private Integer asientoid;
 
-	@Column
-	private Integer Numero;
+	@Column(length = 4)
+	private String numeroasiento;
 
 	@OneToMany(mappedBy = "asiento")
 	private Collection<Ticket> itemstickets = new ArrayList<>();
 
 	public Asiento() {
-		// TODO Auto-generated constructor stub
 	}
 
-	public Asiento(Integer asientoID, Integer numero, Collection<Ticket> itemstickets) {
+	public Asiento(Integer asientoid, String numeroasiento, Collection<Ticket> itemstickets) {
 		super();
-		AsientoID = asientoID;
-		Numero = numero;
+		this.asientoid = asientoid;
+		this.numeroasiento = numeroasiento;
 		this.itemstickets = itemstickets;
 	}
 
-	public Integer getAsientoID() {
-		return AsientoID;
+	public Integer getAsientoid() {
+		return asientoid;
 	}
 
-	public void setAsientoID(Integer asientoID) {
-		AsientoID = asientoID;
+	public void setAsientoid(Integer asientoid) {
+		this.asientoid = asientoid;
 	}
 
-	public Integer getNumero() {
-		return Numero;
+	public String getNumeroasiento() {
+		return numeroasiento;
 	}
 
-	public void setNumero(Integer numero) {
-		Numero = numero;
+	public void setNumeroasiento(String numeroasiento) {
+		this.numeroasiento = numeroasiento;
 	}
 
 	public Collection<Ticket> getItemstickets() {
@@ -61,7 +58,4 @@ public class Asiento {
 	public void setItemstickets(Collection<Ticket> itemstickets) {
 		this.itemstickets = itemstickets;
 	}
-
-
 }
-

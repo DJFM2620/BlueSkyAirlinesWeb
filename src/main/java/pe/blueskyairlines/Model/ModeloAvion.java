@@ -1,6 +1,5 @@
 package pe.blueskyairlines.Model;
 
-
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -13,57 +12,46 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "modelos")
+@Table(name = "ModeloAvion")
 public class ModeloAvion {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer ModeloID;
+	private Integer modeloid;
 
-	@Column
-	private String Nombre;
-
-	
+	@Column(length = 10)
+	private String nombre;
 
 	@OneToMany(mappedBy = "modelo")
-	private Collection<Avion> itemsAvion = new ArrayList<>();
+	private Collection<Avion> itemsavion = new ArrayList<>();
 
 	public ModeloAvion() {
-		// TODO Auto-generated constructor stub
 	}
 
-	public ModeloAvion(Integer modeloID, String nombre, Collection<Avion> itemsAvion) {
+	public ModeloAvion(Integer modeloid, String nombre, Collection<Avion> itemsavion) {
 		super();
-		ModeloID = modeloID;
-		Nombre = nombre;
-		this.itemsAvion = itemsAvion;
+		this.modeloid = modeloid;
+		this.nombre = nombre;
+		this.itemsavion = itemsavion;
 	}
 
-	public Integer getModeloID() {
-		return ModeloID;
+	public Integer getModeloid() {
+		return modeloid;
 	}
 
-	public void setModeloID(Integer modeloID) {
-		ModeloID = modeloID;
+	public void setModeloid(Integer modeloid) {
+		this.modeloid = modeloid;
 	}
 
 	public String getNombre() {
-		return Nombre;
+		return nombre;
 	}
 
 	public void setNombre(String nombre) {
-		Nombre = nombre;
+		this.nombre = nombre;
 	}
 
-	public Collection<Avion> getItemsAvion() {
-		return itemsAvion;
+	public void setItemsavion(Collection<Avion> itemsavion) {
+		this.itemsavion = itemsavion;
 	}
-
-	public void setItemsAvion(Collection<Avion> itemsAvion) {
-		this.itemsAvion = itemsAvion;
-	}
-
-
-	
-
 }

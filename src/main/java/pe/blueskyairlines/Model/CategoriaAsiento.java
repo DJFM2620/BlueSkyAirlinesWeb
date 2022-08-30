@@ -1,6 +1,5 @@
 package pe.blueskyairlines.Model;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,51 +8,38 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "categoriaAsiento")
+@Table(name = "CategoriaAsiento")
 public class CategoriaAsiento {
-
-	
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer CategoriaID;
+	private Integer categoriaid;
 
-	@Column
-	private String Nombre;
-
+	@Column(length = 15)
+	private String nombre;
 
 	public CategoriaAsiento() {
-		// TODO Auto-generated constructor stub
 	}
 
-
-	public CategoriaAsiento(Integer categoriaID, String nombre) {
+	public CategoriaAsiento(Integer categoriaid, String nombre) {
 		super();
-		CategoriaID = categoriaID;
-		Nombre = nombre;
+		this.categoriaid = categoriaid;
+		this.nombre = nombre;
 	}
 
-
-	public Integer getCategoriaID() {
-		return CategoriaID;
+	public Integer getCategoriaid() {
+		return categoriaid;
 	}
 
-
-	public void setCategoriaID(Integer categoriaID) {
-		CategoriaID = categoriaID;
+	public void setCategoriaid(Integer categoriaid) {
+		this.categoriaid = categoriaid;
 	}
-
 
 	public String getNombre() {
-		return Nombre;
+		return nombre;
 	}
-
 
 	public void setNombre(String nombre) {
-		Nombre = nombre;
+		this.nombre = nombre;
 	}
-
-
-
 }
-

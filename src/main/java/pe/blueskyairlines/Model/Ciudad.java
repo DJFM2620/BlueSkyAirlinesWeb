@@ -15,90 +15,59 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "ciudades")
+@Table(name = "Ciudad")
 public class Ciudad {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer CiudadID;
+	private Integer ciudadid;
 
-	@Column
-	private String Nombre;
-	
+	@Column(length = 15)
+	private String nombre;
 	
 	@ManyToOne
-	@JoinColumn(name = "PaisID", nullable = false, foreignKey = @ForeignKey(foreignKeyDefinition = "foreign key(PaisID) references paises(PaisID)"))
+	@JoinColumn(name = "paisid", nullable = false, foreignKey = @ForeignKey(foreignKeyDefinition = "foreign key(paisid) references pais(paisid)"))
 	private Pais pais;
 	
 	@OneToMany(mappedBy = "ciudad")
-	private Collection<Aeropuerto> itemsAeropuerto = new ArrayList<>();
-	
-	
+	private Collection<Aeropuerto> itemsaeropuerto = new ArrayList<>();
 	
 	public Ciudad() {
-		// TODO Auto-generated constructor stub
 	}
 
-
-
-	public Ciudad(Integer ciudadID, String nombre, Pais pais, Collection<Aeropuerto> itemsAeropuerto) {
+	public Ciudad(Integer ciudadid, String nombre, Pais pais, Collection<Aeropuerto> itemsaeropuerto) {
 		super();
-		CiudadID = ciudadID;
-		Nombre = nombre;
+		this.ciudadid = ciudadid;
+		this.nombre = nombre;
 		this.pais = pais;
-		this.itemsAeropuerto = itemsAeropuerto;
+		this.itemsaeropuerto = itemsaeropuerto;
 	}
 
-
-
-	public Integer getCiudadID() {
-		return CiudadID;
+	public Integer getCiudadid() {
+		return ciudadid;
 	}
 
-
-
-	public void setCiudadID(Integer ciudadID) {
-		CiudadID = ciudadID;
+	public void setCiudadid(Integer ciudadid) {
+		this.ciudadid = ciudadid;
 	}
-
-
 
 	public String getNombre() {
-		return Nombre;
+		return nombre;
 	}
-
-
 
 	public void setNombre(String nombre) {
-		Nombre = nombre;
+		this.nombre = nombre;
 	}
-
-
 
 	public Pais getPais() {
 		return pais;
 	}
 
-
-
 	public void setPais(Pais pais) {
 		this.pais = pais;
 	}
-
-
-
-	public Collection<Aeropuerto> getItemsAeropuerto() {
-		return itemsAeropuerto;
-	}
-
-
-
-	public void setItemsAeropuerto(Collection<Aeropuerto> itemsAeropuerto) {
-		this.itemsAeropuerto = itemsAeropuerto;
-	}
 	
-	
-
-
-
+	public void setItemsaeropuerto(Collection<Aeropuerto> itemsaeropuerto) {
+		this.itemsaeropuerto = itemsaeropuerto;
+	}
 }

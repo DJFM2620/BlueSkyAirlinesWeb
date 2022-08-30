@@ -11,38 +11,29 @@ import javax.persistence.ForeignKey;
 import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 
-
-
 @Entity
-@Table(name = "asientoAvion")
+@Table(name = "Asiento_Avion")
 @AssociationOverrides({
-@AssociationOverride( name = "asiento_Avion_ID.asiento",joinColumns = @JoinColumn( name = "AsientoID", nullable = false,foreignKey = @ForeignKey(foreignKeyDefinition = "foreign key (AsientoID) references asientos (AsientoID)"))),
-@AssociationOverride( name = "asiento_Avion_ID.avion",joinColumns = @JoinColumn( name = "AvionID", nullable = false,foreignKey = @ForeignKey(foreignKeyDefinition = "foreign key (AvionID) references aviones (AvionID)"))),
-@AssociationOverride( name = "asiento_Avion_ID.categoria",joinColumns = @JoinColumn( name = "CategoriaID", nullable = false,foreignKey = @ForeignKey(foreignKeyDefinition = "foreign key (CodArticulo) references categoriaAsiento (CodArticulo)"))),
-})
+		@AssociationOverride(name = "asiento_Avion_ID.asiento", joinColumns = @JoinColumn(name = "asientoid", nullable = false, foreignKey = @ForeignKey(foreignKeyDefinition = "foreign key (asientoid) references asiento (asientoid)"))),
+		@AssociationOverride(name = "asiento_Avion_ID.avion", joinColumns = @JoinColumn(name = "avionid", nullable = false, foreignKey = @ForeignKey(foreignKeyDefinition = "foreign key (avionid) references avion (avionid)"))),
+		@AssociationOverride(name = "asiento_Avion_ID.categoria", joinColumns = @JoinColumn(name = "categoriaid", nullable = false, foreignKey = @ForeignKey(foreignKeyDefinition = "foreign key (categoriaid) references categoriaasiento (categoriaid)"))), })
 public class Asiento_Avion {
-	
-	
-	@EmbeddedId
-	private Asiento_Avion_ID asiento_Avion_ID= new Asiento_Avion_ID();
-	
-	
-	public Asiento_Avion() {
-		// TODO Auto-generated constructor stub
-	}
 
+	@EmbeddedId
+	private Asiento_Avion_ID asiento_Avion_ID = new Asiento_Avion_ID();
+
+	public Asiento_Avion() {
+	}
 
 	public Asiento_Avion(Asiento_Avion_ID asiento_Avion_ID) {
 		super();
 		this.asiento_Avion_ID = asiento_Avion_ID;
 	}
 
-
 	@Override
 	public int hashCode() {
 		return Objects.hash(asiento_Avion_ID);
 	}
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -56,16 +47,14 @@ public class Asiento_Avion {
 		return Objects.equals(asiento_Avion_ID, other.asiento_Avion_ID);
 	}
 
-
 	public Asiento_Avion_ID getAsiento_Avion_ID() {
 		return asiento_Avion_ID;
 	}
 
-
 	public void setAsiento_Avion_ID(Asiento_Avion_ID asiento_Avion_ID) {
 		this.asiento_Avion_ID = asiento_Avion_ID;
 	}
-	
+
 	public Asiento getAsiento() {
 		return asiento_Avion_ID.getAsiento();
 	}
@@ -77,9 +66,11 @@ public class Asiento_Avion {
 	public Avion getAvion() {
 		return asiento_Avion_ID.getAvion();
 	}
+
 	public void setAvion(Avion avion) {
 		asiento_Avion_ID.setAvion(avion);
 	}
+
 	public CategoriaAsiento getCategoria() {
 		return asiento_Avion_ID.getCategoria();
 	}
@@ -87,9 +78,4 @@ public class Asiento_Avion {
 	public void setCategoria(CategoriaAsiento categoria) {
 		asiento_Avion_ID.setCategoria(categoria);
 	}
-
-	
-	
-	
-
 }
