@@ -1,11 +1,19 @@
 package pe.blueskyairlines.Model;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name = "clientes")
@@ -33,12 +41,20 @@ public class Cliente {
 	@Column(length = 15)
 	private String pasaporte;
 	
+	
+	@ManyToOne
+	@JoinColumn(name = "PaisID", nullable = false, foreignKey = @ForeignKey(foreignKeyDefinition = "foreign key(PaisID) references paises(PaisID)"))
+	private Pais pais;
+	
+	@OneToMany(mappedBy = "cliente")
+	private Collection<Reserva> itemsreserva = new ArrayList<>();
+	
 	public Cliente() {
 	}
 
 	public Cliente(Integer clienteid, String nombre, String apellidop, String apellidom, String celular, String email,
-			String pasaporte) {
-		
+			String pasaporte, Pais pais, Collection<Reserva> itemsreserva) {
+		super();
 		this.clienteid = clienteid;
 		this.nombre = nombre;
 		this.apellidop = apellidop;
@@ -46,6 +62,8 @@ public class Cliente {
 		this.celular = celular;
 		this.email = email;
 		this.pasaporte = pasaporte;
+		this.pais = pais;
+		this.itemsreserva = itemsreserva;
 	}
 
 	public Integer getClienteid() {
@@ -103,4 +121,27 @@ public class Cliente {
 	public void setPasaporte(String pasaporte) {
 		this.pasaporte = pasaporte;
 	}
+
+	public Pais getPais() {
+		return pais;
+	}
+
+	public void setPais(Pais pais) {
+		this.pais = pais;
+	}
+
+	public Collection<Reserva> getItemsreserva() {
+		return itemsreserva;
+	}
+
+	public void setItemsreserva(Collection<Reserva> itemsreserva) {
+		this.itemsreserva = itemsreserva;
+	}
+
+	
+
+	
+
+
+
 }
