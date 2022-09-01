@@ -1,0 +1,510 @@
+* {
+	padding: 0;
+	margin: 0;
+	font-family: 'Indie Flower',cursive;
+	font-weight: 100;
+	font-size: 30px;
+}
+
+
+/* -------------------------------- HEADER INICIO -------------------------------- */
+/* -------------------------------- HEADER INICIO -------------------------------- */
+/* -------------------------------- HEADER INICIO -------------------------------- */
+
+.Header {
+
+	background: #445DEA;
+	height: 80px;
+	user-select: none;
+	width: 1902.5px;
+	background: radial-gradient(circle, #445DEA, #3042A5);
+	position: fixed;
+	z-index: 1000;
+}
+
+.Nav__li {
+
+	display: inline-block;
+	position: relative;
+	left: 490px;
+	top: 25px;
+	margin-right: 100px;
+}
+
+.Nav__li a {
+
+	color: white;
+	text-decoration: none;
+}
+
+.Nav__li a:hover {
+
+  color: #EAA944;
+
+}
+
+.LogoAerolinea {
+
+	width: 380px;
+	height: 59px;
+	/*background: red;*/
+	position: relative;
+	top: -23px;
+	left: 15px;
+}
+
+.LogoAerolinea img {
+
+	width: 130px;
+	height: 100%;
+	object-fit: cover;
+	border: 2px solid #000;
+}
+
+.LogoAerolinea p {
+
+	display: inline-block;
+	position: absolute;
+	top: 15px;
+	right: 18px;
+	color: white;
+}
+
+/* -------------------------------- HEADER FIN -------------------------------- */
+/* -------------------------------- HEADER FIN -------------------------------- */
+/* -------------------------------- HEADER FIN -------------------------------- */
+
+/* -------------------------------- BODY INICIO -------------------------------- */
+/* -------------------------------- BODY INICIO -------------------------------- */
+/* -------------------------------- BODY INICIO -------------------------------- */
+
+/*-------- Imagen Destino -- Inicio --------*/
+
+.ImagenDestino {
+
+	display: inline;
+	width: 1365px;
+	height: 419px;
+	position: absolute;
+	left: 250px;
+	top: 80px;
+	z-index: -1;
+}
+
+.ImagenDestino img {
+
+	width: 100%;
+	height: 100%;
+	box-shadow: 0px 5px 10px 0 #000;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border: 5px solid #445DEA;
+}
+/*-------- Imagen Destino -- Fin --------*/
+
+
+/*-------- Boton Nacional e Internacional -- Inicio --------*/
+
+.Switcher {
+  position: relative;
+  display: flex;
+  box-shadow: inset 0px 0px 5px #000;
+  overflow: hidden;
+  cursor: pointer;
+  animation: r-n 0.5s;
+  user-select: none;
+  font-size: 3vmin;
+  will-change: transform;
+  background: #445DEA;
+}
+.Switcher__checkbox:checked + .Switcher {
+  animation-name: r-p;
+}
+
+@keyframes r-p {
+  50% {
+    transform: rotateY(2deg);
+  }
+}
+
+@keyframes r-n {
+  50% {
+    transform: rotateY(-2deg);
+  }
+}
+
+.Switcher::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 200%;
+  border-radius: inherit;
+  background-color: #AFDCFF;
+  transform: translateX(-75%);
+  transition: transform 0.5s ease-in-out;
+}
+.Switcher__checkbox:checked + .Switcher::before {
+  transform: translateX(25%);
+}
+
+.Switcher__trigger {
+  position: relative;
+  z-index: 1;
+  padding: 0.5em 3em;
+}
+
+.Switcher__trigger::after {
+  content: attr(data-value);
+  color: #fff;
+}
+
+.Switcher__trigger::before {
+  --i: var(--x);
+  content: attr(data-value);
+  position: absolute;
+  color: #000;
+  transition: opacity 0.3s;
+  opacity: calc((var(--i) + 1) / 2);
+  transition-delay: calc(.3s * (var(--i) - 1) / -2);
+}
+
+.Switcher__checkbox:checked + .Switcher .Switcher__trigger::before {
+  --i: calc(var(--x) * -1);
+}
+
+.Switcher__trigger:nth-of-type(1)::before {
+  --x: 1;
+}
+
+.Switcher__trigger:nth-of-type(2)::before {
+  --x: -1;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.box {
+
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+  perspective: 750px;
+  position: relative;
+  top: 550px;
+  right: 0px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*-------- Boton Nacional e Internacional -- Fin --------*/
+/*-------- Buscar Vuelos -- Inicio --------*/
+
+.BuscarDestino {
+
+	display: inline-block;
+	position: absolute;
+	height: 130px;
+	width: 650px;
+	bottom: 280px;
+	left: 85px;
+}
+
+.BuscarDestino input {
+
+	margin-top: 15px;
+	position: relative;
+	display: inline-block;
+	border-radius: 10px;
+	width: 300px;
+	height: 55px;
+}
+
+.BuscarDestino button {
+
+	margin-left: 15px;
+	width: 300px;
+	height: 55px;
+	position: relative;
+	display: inline-block;
+	border-radius: 10px;
+	background: #EAA944;
+}
+
+.BuscarDestino button:hover {
+
+	cursor: pointer;
+	/*box-shadow: -5px -5px 5px #000, -5px -5px 5px #000, 5px 5px 5px #000, 5px 5px 5px #000;*/
+	width: 302px;
+	height: 57px;
+  transition: all .33s;
+}
+/*-------- Buscar Vuelos -- Fin --------*/
+
+/*-------- Imagenes Vuelos -- Inicio --------*/
+.ImgVuelos {
+
+	width: 1890px;
+	height: 1049px;
+	position: absolute;
+	display: inline-block;
+	top: 650px;
+	left: -15px;
+	right: auto;
+}
+
+.ImgVuelos__Div {
+
+	width: 520px;
+	height: 500px;
+	border: 5px solid #000;
+	display: inline-block;
+	margin-left: 85px;
+	margin-top: 50px;
+}
+
+.ImgVuelos__Div img {
+
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	margin-bottom: 80px;
+}
+
+.NombreVuelo{
+
+	width: 510px;
+	height: 50px;
+	background: #445DEA;
+	display: inline-block;
+	position: absolute;
+	top: 370px;
+	left: 100px;
+	font-size: 100px;
+}
+
+.NombreVuelo p {
+
+	position: absolute;
+	display: inline-block;
+  font-size: 40px;
+  left: 7px;
+}
+
+.NombreVuelo__P1 {
+
+	left: 90px;
+	top: 55px;
+	color: white;
+	text-shadow: 3px 4px .1px #000;
+}
+
+.NombreVuelo__P2 {
+
+	left: 706px;
+	top: 55px;
+	color: white;
+	text-shadow: 3px 4px .1px #000;
+}
+
+.NombreVuelo__P3 {
+
+	left: 1323px;
+	top: 55px;
+	color: white;
+	text-shadow: 3px 4px .1px #000;
+}
+
+.NombreVuelo__P4 {
+
+	top: 690px;
+	left: 90px;
+	color: white;
+	text-shadow: 3px 4px .1px #000;
+}
+
+.NombreVuelo__P5 {
+
+	top: 690px;
+	left: 706px;
+	color: white;
+	text-shadow: 3px 4px .1px #000;
+}
+
+.NombreVuelo__P6 {
+
+	top: 690px;
+	left: 1323px;
+	color: white;
+	text-shadow: 3px 4px .1px #000;
+}
+
+.PrecioVuelo1 {
+
+ 	margin-left: 401px;
+ 	background: #EAA944;
+ 	color: #445DEA;
+ 	text-shadow: 0px 0px 1px #000;
+ 	top: 50.1px;
+ 	width: 102px;
+ 	text-align: center;
+ 	border-bottom-left-radius: 10px;
+}
+
+.PrecioVuelo2 {
+
+	margin-left: 401px;
+ 	background: #EAA944;
+ 	color: #445DEA;
+ 	text-shadow: 0px 0px 1px #000;
+ 	top: 50.1px;
+ 	width: 102px;
+ 	text-align: center;
+ 	border-bottom-left-radius: 10px;
+}
+
+.PrecioVuelo3 {
+
+	margin-left: 399px;
+ 	background: #EAA944;
+ 	color: #445DEA;
+ 	text-shadow: 0px 0px 1px #000;
+ 	top: 50.1px;
+ 	width: 104px;
+ 	text-align: center;
+ 	border-bottom-left-radius: 10px;
+}
+
+.PrecioVuelo4 {
+
+	margin-left: 401px;
+ 	background: #EAA944;
+ 	color: #445DEA;
+ 	text-shadow: 0px 0px 1px #000;
+ 	top: 50.1px;
+ 	width: 102px;
+ 	text-align: center;
+ 	border-bottom-left-radius: 10px;
+}
+
+.PrecioVuelo5 {
+
+	margin-left: 393px;
+ 	background: #EAA944;
+ 	color: #445DEA;
+ 	text-shadow: 0px 0px 1px #000;
+ 	top: 50.1px;
+ 	width: 110px;
+ 	text-align: center;
+ 	border-bottom-left-radius: 10px;
+}
+
+.PrecioVuelo6 {
+
+	margin-left: 393px;
+ 	background: #EAA944;
+ 	color: #445DEA;
+ 	text-shadow: 0px 0px 1px #000;
+ 	top: 50.1px;
+ 	width: 110px;
+ 	text-align: center;
+ 	border-bottom-left-radius: 10px;
+}
+
+/*-------- Imagenes Vuelos -- Fin --------*/
+
+/* -------------------------------- BODY FIN -------------------------------- */
+/* -------------------------------- BODY FIN -------------------------------- */
+/* -------------------------------- BODY FIN -------------------------------- */
+
+/* -------------------------------- FOOTER INICIO -------------------------------- */
+/* -------------------------------- FOOTER INICIO -------------------------------- */
+/* -------------------------------- FOOTER INICIO -------------------------------- */
+
+.Footer {
+
+	background: #445DEA;
+	width: 100%;
+	height: 120px;
+	position: absolute;
+	top: 1950px;
+}
+
+/*.Footer__IMG {
+
+	width: 100px;
+	height: 100px;
+
+	background: blue;
+
+	position: absolute;
+	display: inline-block;
+
+	left: 20px;
+	top: 2472px;
+}*/
+
+.Footer img{
+
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	border: 2px solid black;	
+	top: 10px;
+	left: 10px;
+}
+
+.Footer a {
+
+	padding-right: 70px;
+	position: relative;
+	top: 8px;
+	left: 120px;
+	color: #fff;
+}
+
+.Index:hover {
+
+	color: #EAA944;
+}
+
+.Footer__li{
+
+	display: inline-block;
+	padding: 9px;
+	color: #fff;
+	margin-right: 50px;
+	margin-top: 35px;
+	float: right;
+	color: #000;
+}
+
+.LineaDivisoria {
+
+	display: inline-block;
+	position: relative;
+	height: 60px;
+	width: 3px;
+	top: 25px;
+	left: 90px;
+	background: #000;
+	border: 0px solid black;
+}
+
+
+/* -------------------------------- FOOTER FIN -------------------------------- */
+/* -------------------------------- FOOTER FIN -------------------------------- */
+/* -------------------------------- FOOTER FIN -------------------------------- */

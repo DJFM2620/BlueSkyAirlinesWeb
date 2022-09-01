@@ -1,0 +1,296 @@
+* {
+	padding: 0;
+	margin: 0;
+	font-family: 'Indie Flower',cursive;
+	font-weight: 100;
+	font-size: 30px;
+}
+
+
+
+/*-------------------- Header - INICIO --------------------*/
+/*-------------------- Header - INICIO --------------------*/
+
+.Header {
+
+	background: #445DEA;
+	height: 80px;
+	user-select: none;
+	width: 1902.5px;
+	background: radial-gradient(circle, #445DEA, #3042A5);
+	position: fixed;
+	z-index: 1000;
+}
+
+.Nav__li {
+
+	display: inline-block;
+	position: relative;
+	left: 490px;
+	top: 25px;
+	margin-right: 100px;
+}
+
+.Nav__li a {
+
+	color: white;
+	text-decoration: none;
+}
+
+.Nav__li a:hover {
+
+  color: #EAA944;
+
+}
+
+.LogoAerolinea {
+
+	width: 380px;
+	height: 59px;
+	/*background: red;*/
+	position: relative;
+	top: -23px;
+	left: 15px;
+}
+
+.LogoAerolinea img {
+
+	width: 130px;
+	height: 100%;
+	object-fit: cover;
+	border: 2px solid #000;
+}
+
+.LogoAerolinea p {
+
+	display: inline-block;
+	position: absolute;
+	top: 15px;
+	right: 18px;
+	color: white;
+}
+
+/*-------------------- Header - FIN --------------------*/
+/*-------------------- Header - FIN --------------------*/
+
+/*-------------------- Buscador - INICIO --------------------*/
+/*-------------------- Buscador - INICIO --------------------*/
+
+.BuscarViajes {
+
+	display: inline-block;
+	position: absolute;
+	height: 130px;
+	width: 650px;
+	top: 200px;
+	left: 600px;
+}
+
+.BuscarViajes input {
+
+	margin-top: 15px;
+	position: relative;
+	display: inline-block;
+	border-radius: 10px;
+	width: 300px;
+	height: 55px;
+}
+
+.BuscarViajes button {
+
+	margin-left: 15px;
+	width: 300px;
+	height: 55px;
+	position: relative;
+	display: inline-block;
+	border-radius: 10px;
+	background: #EAA944;
+}
+
+.BuscarViajes button:hover {
+
+	cursor: pointer;
+	/*box-shadow: -5px -5px 5px #000, -5px -5px 5px #000, 5px 5px 5px #000, 5px 5px 5px #000;*/
+	width: 302px;
+	height: 57px;
+  transition: all .33s;
+}
+/*-------------------- Buscador - FIN --------------------*/
+/*-------------------- Buscador - FIN --------------------*/
+
+/*-------------------- Tabla - INICIO --------------------*/
+/*-------------------- Tabla - INICIO --------------------*/
+
+.ContenedorTabla {
+
+	position: absolute;
+	display: inline-block;
+	top: 400px;
+	left: 320px;
+}
+
+.HeadTable th{
+	color: #D5DDE5;
+	background: #445DEA;
+	border-bottom:4px solid #9ea7af;
+  border-right: 1px solid #343a45;
+  font-size:23px;
+  font-weight: 100;
+  padding:24px;
+  text-align:left;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  vertical-align:middle;
+}
+
+th:first-child {
+  border-top-left-radius:3px;
+}
+ 
+th:last-child {
+  border-top-right-radius:3px;
+  border-right:none;
+}
+  
+tr {
+  border-top: 1px solid #C1C3D1;
+  color:#666B85;
+  font-size:16px;
+  font-weight:normal;
+  text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+}
+ 
+tr:hover td {
+  background:#4E5066;
+  color:#FFFFFF;
+  border-top: 1px solid #22262e;
+}
+ 
+tr:first-child {
+  border-top:none;
+}
+
+tr:last-child {
+  border-bottom:none;
+}
+ 
+tr:nth-child(odd) td {
+  background:#EBEBEB;
+}
+ 
+tr:nth-child(odd):hover td {
+  background:#4E5066;
+}
+
+tr:last-child td:first-child {
+  border-bottom-left-radius:3px;
+}
+ 
+tr:last-child td:last-child {
+  border-bottom-right-radius:3px;
+}
+ 
+td {
+  background:#FFFFFF;
+  padding:20px;
+  text-align:left;
+  vertical-align:middle;
+  font-weight:300;
+  font-size:18px;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid #C1C3D1;
+}
+
+td:last-child {
+  border-right: 0px;
+}
+
+th.text-left {
+  text-align: left;
+}
+
+th.text-center {
+  text-align: center;
+}
+
+th.text-right {
+  text-align: right;
+}
+
+td.text-left {
+  text-align: left;
+}
+
+td.text-center {
+  text-align: center;
+}
+
+td.text-right {
+  text-align: right;
+}
+
+/*-------------------- Tabla - FIN --------------------*/
+/*-------------------- Tabla - FIN --------------------*/
+
+/*-------------------- Footer - INICIO --------------------*/
+/*-------------------- Footer - INICIO --------------------*/
+
+.Footer {
+
+	background: #445DEA;
+	width: 100%;
+	height: 120px;
+	position: absolute;
+	top: 1000px;
+}
+
+.Footer img{
+
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	border: 2px solid black;	
+	top: 10px;
+	left: 10px;
+}
+
+.Footer a {
+
+	padding-right: 70px;
+	position: relative;
+	top: 8px;
+	left: 120px;
+	color: #fff;
+}
+
+.Index:hover {
+
+	color: #EAA944;
+}
+
+.Footer__li{
+
+	display: inline-block;
+	padding: 9px;
+	color: #fff;
+	margin-right: 50px;
+	margin-top: 35px;
+	float: right;
+	color: #000;
+}
+
+.LineaDivisoria {
+
+	display: inline-block;
+	position: relative;
+	height: 60px;
+	width: 3px;
+	top: 25px;
+	left: 90px;
+	background: #000;
+	border: 0px solid black;
+}
+
+
+/* -------------------------------- FOOTER FIN -------------------------------- */
+/* -------------------------------- FOOTER FIN -------------------------------- */
+/* -------------------------------- FOOTER FIN -------------------------------- */

@@ -14,51 +14,49 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-
 @Entity
-@Table(name = "clientes")
+@Table(name = "Cliente")
 public class Cliente {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer clienteid;
-	
+
 	@Column(length = 20)
 	private String nombre;
-	
+
 	@Column(length = 20)
-	private String apellidop;
-	
+	private String apellidoP;
+
 	@Column(length = 20)
-	private String apellidom;
-	
-	@Column(length = 25)
+	private String apellidoM;
+
+	@Column(length = 15)
 	private String celular;
-	
+
 	@Column(length = 30)
 	private String email;
-	
+
 	@Column(length = 15)
 	private String pasaporte;
-	
-	
+
 	@ManyToOne
-	@JoinColumn(name = "PaisID", nullable = false, foreignKey = @ForeignKey(foreignKeyDefinition = "foreign key(PaisID) references paises(PaisID)"))
+	@JoinColumn(name = "paisid", nullable = false, foreignKey = @ForeignKey(foreignKeyDefinition = "foreign key(paisid) references pais(paisid)"))
 	private Pais pais;
-	
+
 	@OneToMany(mappedBy = "cliente")
 	private Collection<Reserva> itemsreserva = new ArrayList<>();
-	
+
 	public Cliente() {
 	}
 
-	public Cliente(Integer clienteid, String nombre, String apellidop, String apellidom, String celular, String email,
+	public Cliente(Integer clienteid, String nombre, String apellidoP, String apellidoM, String celular, String email,
 			String pasaporte, Pais pais, Collection<Reserva> itemsreserva) {
 		super();
 		this.clienteid = clienteid;
 		this.nombre = nombre;
-		this.apellidop = apellidop;
-		this.apellidom = apellidom;
+		this.apellidoP = apellidoP;
+		this.apellidoM = apellidoM;
 		this.celular = celular;
 		this.email = email;
 		this.pasaporte = pasaporte;
@@ -82,20 +80,20 @@ public class Cliente {
 		this.nombre = nombre;
 	}
 
-	public String getApellidop() {
-		return apellidop;
+	public String getApellidoP() {
+		return apellidoP;
 	}
 
-	public void setApellidop(String apellidop) {
-		this.apellidop = apellidop;
+	public void setApellidoP(String apellidoP) {
+		this.apellidoP = apellidoP;
 	}
 
-	public String getApellidom() {
-		return apellidom;
+	public String getApellidoM() {
+		return apellidoM;
 	}
 
-	public void setApellidom(String apellidom) {
-		this.apellidom = apellidom;
+	public void setApellidoM(String apellidoM) {
+		this.apellidoM = apellidoM;
 	}
 
 	public String getCelular() {
@@ -137,11 +135,4 @@ public class Cliente {
 	public void setItemsreserva(Collection<Reserva> itemsreserva) {
 		this.itemsreserva = itemsreserva;
 	}
-
-	
-
-	
-
-
-
 }

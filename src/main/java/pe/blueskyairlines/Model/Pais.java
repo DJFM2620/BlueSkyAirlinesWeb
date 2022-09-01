@@ -1,6 +1,5 @@
 package pe.blueskyairlines.Model;
 
-
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -12,58 +11,55 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-
 @Entity
-@Table(name = "paises")
+@Table(name = "Pais")
 public class Pais {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer PaisID;
+	private Integer paisid;
 
-	@Column
-	private String Nombre;
+	@Column(length = 15)
+	private String nombre;
 
 	@OneToMany(mappedBy = "pais")
-	private Collection<Cliente> itemsCliente = new ArrayList<>();
-	
+	private Collection<Cliente> itemscliente = new ArrayList<>();
+
 	@OneToMany(mappedBy = "pais")
 	private Collection<Ciudad> itemsciudad = new ArrayList<>();
 
 	public Pais() {
-		// TODO Auto-generated constructor stub
 	}
 
-	public Pais(Integer paisID, String nombre) {
+	public Pais(Integer paisid, String nombre, Collection<Cliente> itemscliente, Collection<Ciudad> itemsciudad) {
 		super();
-		PaisID = paisID;
-		Nombre = nombre;
+		this.paisid = paisid;
+		this.nombre = nombre;
+		this.itemscliente = itemscliente;
+		this.itemsciudad = itemsciudad;
 	}
 
-	public Integer getPaisID() {
-		return PaisID;
+	public Integer getPaisid() {
+		return paisid;
 	}
 
-	public void setPaisID(Integer paisID) {
-		PaisID = paisID;
+	public void setPaisid(Integer paisid) {
+		this.paisid = paisid;
 	}
 
 	public String getNombre() {
-		return Nombre;
+		return nombre;
 	}
 
 	public void setNombre(String nombre) {
-		Nombre = nombre;
+		this.nombre = nombre;
 	}
 
+	public void setItemscliente(Collection<Cliente> itemscliente) {
+		this.itemscliente = itemscliente;
+	}
 
-
-
-
-
-
-
-
-
-
+	public void setItemsciudad(Collection<Ciudad> itemsciudad) {
+		this.itemsciudad = itemsciudad;
+	}
 }

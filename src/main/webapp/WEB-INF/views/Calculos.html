@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+
+	<input type="number" name="" id = "Num1" value = "1" onchange="Calcular()">
+	<input type="number" name="" id = "Num2" value = "1" onchange="Calcular()">
+	<input type="text" name="" id = "Suma" readonly="true">
+
+	<script type="text/javascript">
+		function Calcular() {
+			
+			var Numero1 = document.getElementById('Num1').value;
+			var Numero2 = document.getElementById('Num2').value;
+
+			var Suma = Numero1 * Numero2;
+
+			document.getElementById('Suma').value = Suma;
+		}
+	</script>
+
+</body>
+</html>

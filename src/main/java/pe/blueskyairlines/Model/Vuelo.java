@@ -1,6 +1,5 @@
 package pe.blueskyairlines.Model;
 
-
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -20,189 +19,114 @@ import javax.persistence.Table;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
-
 @Entity
-@Table(name = "vuelos")
+@Table(name = "Vuelo")
 public class Vuelo {
-
-	
-
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer VueloID;
+	private Integer vueloid;
 
 	@Column
 	@DateTimeFormat(pattern = "yyyy-MM-dd", iso = ISO.DATE)
-	private LocalDate FechaIda;
+	private LocalDate fechaida;
 
 	@Column
 	@DateTimeFormat(pattern = "HH:mm", iso = ISO.TIME)
-	private LocalTime HoraIda;
+	private LocalTime horaida;
 
 	@Column
 	@DateTimeFormat(pattern = "HH:mm", iso = ISO.TIME)
-	private LocalTime HoraLlegada;
-	
+	private LocalTime horallegada;
+
 	@ManyToOne
-	@JoinColumn(name = "estadoid", nullable = false,
-						  foreignKey = @ForeignKey(foreignKeyDefinition = "foreign key (estadoid) references estados(estadoid)"))
+	@JoinColumn(name = "estadoid", nullable = false, foreignKey = @ForeignKey(foreignKeyDefinition = "foreign key (estadoid) references estado(estadoid)"))
 	private Estado estado;
-	
+
 	@ManyToOne
-	@JoinColumn(name = "AvionID", nullable = false,
-						  foreignKey = @ForeignKey(foreignKeyDefinition = "foreign key (AvionID) references aviones(AvionID)"))
+	@JoinColumn(name = "avionid", nullable = false, foreignKey = @ForeignKey(foreignKeyDefinition = "foreign key (avionid) references avion(avionid)"))
 	private Avion avion;
-	
+
 	@ManyToOne
-	@JoinColumn(name = "AeropuertoID", nullable = false,
-						  foreignKey = @ForeignKey(foreignKeyDefinition = "foreign key (AeropuertoID) references aeropuertos(AeropuertoID)"))
+	@JoinColumn(name = "aeropuertoid", nullable = false, foreignKey = @ForeignKey(foreignKeyDefinition = "foreign key (aeropuertoid) references aeropuerto(aeropuertoid)"))
 	private Aeropuerto aeropuerto;
-	
+
 	@OneToMany(mappedBy = "vuelo")
 	private Collection<Reserva> itemsreserva = new ArrayList<>();
-	
-	
-	
 
 	public Vuelo() {
-		// TODO Auto-generated constructor stub
 	}
 
-
-
-
-	public Vuelo(Integer vueloID, LocalDate fechaIda, LocalTime horaIda, LocalTime horaLlegada, Estado estado,
+	public Vuelo(Integer vueloid, LocalDate fechaida, LocalTime horaida, LocalTime horallegada, Estado estado,
 			Avion avion, Aeropuerto aeropuerto, Collection<Reserva> itemsreserva) {
 		super();
-		VueloID = vueloID;
-		FechaIda = fechaIda;
-		HoraIda = horaIda;
-		HoraLlegada = horaLlegada;
+		this.vueloid = vueloid;
+		this.fechaida = fechaida;
+		this.horaida = horaida;
+		this.horallegada = horallegada;
 		this.estado = estado;
 		this.avion = avion;
 		this.aeropuerto = aeropuerto;
 		this.itemsreserva = itemsreserva;
 	}
 
-
-
-
-	public Integer getVueloID() {
-		return VueloID;
+	public Integer getVueloid() {
+		return vueloid;
 	}
 
-
-
-
-	public void setVueloID(Integer vueloID) {
-		VueloID = vueloID;
+	public void setVueloid(Integer vueloid) {
+		this.vueloid = vueloid;
 	}
 
-
-
-
-	public LocalDate getFechaIda() {
-		return FechaIda;
+	public LocalDate getFechaida() {
+		return fechaida;
 	}
 
-
-
-
-	public void setFechaIda(LocalDate fechaIda) {
-		FechaIda = fechaIda;
+	public void setFechaida(LocalDate fechaida) {
+		this.fechaida = fechaida;
 	}
 
-
-
-
-	public LocalTime getHoraIda() {
-		return HoraIda;
+	public LocalTime getHoraida() {
+		return horaida;
 	}
 
-
-
-
-	public void setHoraIda(LocalTime horaIda) {
-		HoraIda = horaIda;
+	public void setHoraida(LocalTime horaida) {
+		this.horaida = horaida;
 	}
 
-
-
-
-	public LocalTime getHoraLlegada() {
-		return HoraLlegada;
+	public LocalTime getHorallegada() {
+		return horallegada;
 	}
 
-
-
-
-	public void setHoraLlegada(LocalTime horaLlegada) {
-		HoraLlegada = horaLlegada;
+	public void setHorallegada(LocalTime horallegada) {
+		this.horallegada = horallegada;
 	}
-
-
-
 
 	public Estado getEstado() {
 		return estado;
 	}
 
-
-
-
 	public void setEstado(Estado estado) {
 		this.estado = estado;
 	}
-
-
-
 
 	public Avion getAvion() {
 		return avion;
 	}
 
-
-
-
 	public void setAvion(Avion avion) {
 		this.avion = avion;
 	}
-
-
-
 
 	public Aeropuerto getAeropuerto() {
 		return aeropuerto;
 	}
 
-
-
-
 	public void setAeropuerto(Aeropuerto aeropuerto) {
 		this.aeropuerto = aeropuerto;
 	}
 
-
-
-
-	public Collection<Reserva> getItemsreserva() {
-		return itemsreserva;
-	}
-
-
-
-
 	public void setItemsreserva(Collection<Reserva> itemsreserva) {
 		this.itemsreserva = itemsreserva;
 	}
-	
-	
-	
-
-
-
-
-
 }
-

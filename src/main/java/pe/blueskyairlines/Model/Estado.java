@@ -12,25 +12,21 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "estados")
+@Table(name = "Estado")
 public class Estado {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer estadoid;
 	
-	@Column(length = 255)
+	@Column(length = 10)
 	private String nombre;
-	
-	
 	
 	@OneToMany(mappedBy = "estado")
 	private Collection<Vuelo> itemsVuelo = new ArrayList<>();
 	
-	
 	public Estado() {
-		// TODO Auto-generated constructor stub
 	}
-
 
 	public Estado(Integer estadoid, String nombre, Collection<Vuelo> itemsVuelo) {
 		super();
@@ -39,37 +35,23 @@ public class Estado {
 		this.itemsVuelo = itemsVuelo;
 	}
 
-
 	public Integer getEstadoid() {
 		return estadoid;
 	}
-
 
 	public void setEstadoid(Integer estadoid) {
 		this.estadoid = estadoid;
 	}
 
-
 	public String getNombre() {
 		return nombre;
 	}
-
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
-
-	public Collection<Vuelo> getItemsVuelo() {
-		return itemsVuelo;
-	}
-
-
 	public void setItemsVuelo(Collection<Vuelo> itemsVuelo) {
 		this.itemsVuelo = itemsVuelo;
 	}
-
-
-
-	
 }

@@ -1,0 +1,381 @@
+* {
+	padding: 0;
+	margin: 0;
+	font-family: 'Indie Flower',cursive;
+	font-weight: 100;
+	font-size: 30px;
+}
+
+/* -------------------------------- HEADER INICIO -------------------------------- */
+/* -------------------------------- HEADER INICIO -------------------------------- */
+/* -------------------------------- HEADER INICIO -------------------------------- */
+
+.Header {
+
+	background: #445DEA;
+	height: 80px;
+	user-select: none;
+	width: 1902.5px;
+	background: radial-gradient(circle, #445DEA, #3042A5);
+	position: fixed;
+	z-index: 1000;
+}
+
+.Nav__li {
+
+	display: inline-block;
+	position: relative;
+	left: 490px;
+	top: 25px;
+	margin-right: 100px;
+}
+
+.Nav__li a {
+
+	color: white;
+	text-decoration: none;
+}
+
+.Nav__li a:hover {
+
+  color: #EAA944;
+
+}
+
+.LogoAerolinea {
+
+	width: 380px;
+	height: 59px;
+	/*background: red;*/
+	position: relative;
+	top: -23px;
+	left: 15px;
+}
+
+.LogoAerolinea img {
+
+	width: 130px;
+	height: 100%;
+	object-fit: cover;
+	border: 2px solid #000;
+}
+
+.LogoAerolinea p {
+
+	display: inline-block;
+	position: absolute;
+	top: 15px;
+	right: 18px;
+	color: white;
+}
+
+/* -------------------------------- HEADER FIN -------------------------------- */
+/* -------------------------------- HEADER FIN -------------------------------- */
+/* -------------------------------- HEADER FIN -------------------------------- */
+
+/* -------------------------------- BODY INICIO -------------------------------- */
+/* -------------------------------- BODY INICIO -------------------------------- */
+/* -------------------------------- BODY INICIO -------------------------------- */
+
+h1 {
+
+	position: absolute;
+	top: 65px;
+	left: 40%;
+}
+
+.ContenedorPrincipal {
+
+	/*background: salmon;*/
+	width: 1800px;
+	height: 878px;
+	position: absolute;
+	top: 200px;
+	left: 50px;
+}
+
+.ListaVuelos {
+
+	/*background: lightblue;*/
+	position: absolute;
+	width: 1200px;
+	height: 845px;
+	top: 15px;
+	left: 15px;
+	overflow: auto;
+	overflow-x: hidden;
+	border: 3px solid black;
+}
+
+.VuelosSeleccionados {
+
+	/*background: skyblue;*/
+	position: absolute;
+	left: 1229px;
+	top: 15px;
+	width: 557px;
+	height: 845px;
+	border: 3px solid black;
+	overflow: auto;
+}
+
+.Vuelo {
+
+	/*background: deepskyblue;*/
+	width: 1150px;
+	height: 250px;
+	margin-left: 15px;
+	margin-top: 15px;
+	position: relative;
+	border: 3px solid black;
+	background: #DDDFE6;
+}
+
+.Vuelo__Origen {
+
+	/*background: lightcyan;*/
+	position: absolute;
+	left: 1px;
+	top: 50px;
+	width: 540px;
+	height: 180px;
+}
+
+.Vuelo__Origen label {
+
+	position: absolute;
+	left: 35px;
+	top: 20px;
+}
+
+.Origen {
+
+	position: absolute;
+	top: 80px;
+	left: 35px;
+	width: 230px;
+	height: 60px;
+	border-radius: 10px;
+}
+
+.HoraOrigen {
+
+	position: absolute;
+	top: 80px;
+	left: 290px;
+	width: 230px;
+	height: 60px;
+	border-radius: 10px;
+}
+
+.Vuelo__Destino {
+
+	/*background: lightslategray;*/
+	position: absolute;
+	width: 540px;
+	height: 180px;
+	top: 50px;
+	left: 580px;
+}
+
+.Vuelo__Destino label {
+
+	position: absolute;
+	left: 35px;
+	top: 20px;
+}
+
+.Destino {
+
+	position: absolute;
+	top: 80px;
+	left: 35px;
+	width: 230px;
+	height: 60px;
+	border-radius: 10px;
+}
+
+.HoraDestino {
+
+	position: absolute;
+	top: 80px;
+	left: 290px;
+	width: 230px;
+	height: 60px;
+	border-radius: 10px;
+}
+
+.VueloSeleccionados__Vuelo {
+
+	background: lightblue;
+	width: 551px;
+	height: 250px;
+	position: relative;
+	background: #DDDFE6;
+	border-bottom: 3px solid black;
+	border-top: 3px solid black;
+	margin-top: 15px;
+}
+
+.VuelosSeleccionados__Inputs {
+
+	/*background: lightblue;*/
+	position: absolute;
+	width: 350px;
+	height: 250px;
+}
+
+.VuelosSeleccionados__Inputs input {
+
+	position: absolute;
+	width: 150px;
+	height: 50px;
+	border-radius: 10px;
+}
+
+.VuelosSeleccionados__Inputs label {
+
+	position: absolute;
+}
+
+.VuelosSeleccionados__Inputs label:first-child {
+
+	left: 18px;
+	top: 15px;
+}
+
+.VuelosSeleccionados__Inputs--Origen {
+
+	left: 11px;
+	top: 60px;
+}
+
+.VuelosSeleccionados__Inputs--HoraOrigen {
+
+	left: 180px;
+	top: 60px;
+}
+
+.VuelosSeleccionados__Inputs label:nth-child(2n) {
+
+	left: 11px;
+	top: 130px;
+}
+
+.VuelosSeleccionados__Inputs--Destino {
+
+	left: 11px;
+	top: 180px;
+}
+
+.VuelosSeleccionados__Inputs--HoraDestino {
+
+	left: 180px;
+	top: 180px;
+}
+
+.VuelosSeleccionados__Imagen {
+
+	background: gray;
+	position: absolute;
+	/*background: skyblue;*/
+	left: 350px;
+	bottom: 0;
+	height: 250px;
+}
+
+.VuelosSeleccionados__Imagen button {
+
+	position: absolute;
+	bottom: 10px;
+	left: 48px;
+	border-radius: 10px;
+}
+
+.VuelosSeleccionados__Imagen img {
+
+	position: absolute;
+	width: 150px;
+	height: 150px;
+	left: 25px;
+	top: 10px;
+}
+
+.VuelosSeleccionados__Imagen label {
+
+	position: absolute;
+	/*background: blue;*/
+	width: 201px;
+	height: 40px;
+	bottom: 48px;
+	text-align: center;
+}
+
+/* -------------------------------- BODY FIN -------------------------------- */
+/* -------------------------------- BODY FIN -------------------------------- */
+/* -------------------------------- BODY FIN -------------------------------- */
+
+/* -------------------------------- FOOTER INICIO -------------------------------- */
+/* -------------------------------- FOOTER INICIO -------------------------------- */
+/* -------------------------------- FOOTER INICIO -------------------------------- */
+
+.Footer {
+
+	background: #445DEA;
+	width: 100%;
+	height: 120px;
+	position: absolute;
+	top: 1150px;
+}
+
+.Footer img{
+
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	border: 2px solid black;	
+	top: 10px;
+	left: 10px;
+}
+
+.Footer a {
+
+	padding-right: 70px;
+	position: relative;
+	top: 8px;
+	left: 120px;
+	color: #fff;
+}
+
+.Index:hover {
+
+	color: #EAA944;
+}
+
+.Footer__li{
+
+	display: inline-block;
+	padding: 9px;
+	color: #fff;
+	margin-right: 50px;
+	margin-top: 35px;
+	float: right;
+	color: #000;
+}
+
+.LineaDivisoria {
+
+	display: inline-block;
+	position: relative;
+	height: 60px;
+	width: 3px;
+	top: 25px;
+	left: 90px;
+	background: #000;
+	border: 0px solid black;
+}
+
+
+/* -------------------------------- FOOTER FIN -------------------------------- */
+/* -------------------------------- FOOTER FIN -------------------------------- */
+/* -------------------------------- FOOTER FIN -------------------------------- */
