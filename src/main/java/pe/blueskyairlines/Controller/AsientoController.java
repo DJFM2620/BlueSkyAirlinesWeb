@@ -10,14 +10,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import pe.blueskyairlines.Model.Asiento;
+import pe.blueskyairlines.Model.Asiento_Avion;
 import pe.blueskyairlines.Service.AsientoService;
+import pe.blueskyairlines.Service.Asiento_AvionService;
 
 
 @Controller
 public class AsientoController {
 	
 	@Autowired
-	private AsientoService asientoService;
+	private Asiento_AvionService asientoService;
 	
 	
 	@RequestMapping( value = "/Asientos", method = RequestMethod.GET)
@@ -36,7 +38,7 @@ public class AsientoController {
 	}
 
 	@RequestMapping( value = "/Asiento_registrar", method = RequestMethod.POST)
-	public String RegistrarAsiento_POST(Asiento asiento) {
+	public String RegistrarAsiento_POST(Asiento_Avion asiento) {
 
 		asientoService.Insert(asiento);
 	return "redirect:/listado_asiento";
@@ -51,7 +53,7 @@ public class AsientoController {
 	}
 
 	@RequestMapping( value = "/EditarAsiento/{asientoid}", method = RequestMethod.POST)
-	public String EditarAsiento_POST(Asiento asiento) {
+	public String EditarAsiento_POST(Asiento_Avion asiento) {
 
 		asientoService.Update(asiento);
 

@@ -29,6 +29,17 @@ public class ClienteController {
 	 return "/Cliente/listar";
 	}
 	
+	@RequestMapping( value = "/Detalle/{clienteid}", method = RequestMethod.GET)
+	public String ClienteDetalleGET(@PathVariable Integer clienteid,Map<String, Object> map) {
+		
+	Cliente cliente = clienteService.FindByID(clienteid);
+	int vuelos = clienteService.CuentadeVuelos(clienteid);
+	map.put("Cliente", cliente);
+	map.put("Vuelos", vuelos);
+		
+	 return "/Cliente/detalle";
+	}
+	
 	@RequestMapping( value = "/RegistrarCliente", method = RequestMethod.GET)
 	public String RegistrarCliente_GET(Model model) {
 

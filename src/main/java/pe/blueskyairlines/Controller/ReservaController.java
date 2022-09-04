@@ -68,7 +68,7 @@ public class ReservaController {
 	 return "/Reserva/Eliminar";
 	}
 
-	@RequestMapping( value = "/EliminarCliente/{clienteid}", method = RequestMethod.POST)
+	@RequestMapping( value = "/EliminarReserva/{reservaid}", method = RequestMethod.POST)
 	public String EliminarReserva_POST(Reserva reserva) {
 
 		reservaService.Delete(reserva.getReservaid());

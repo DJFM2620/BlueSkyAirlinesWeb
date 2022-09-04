@@ -20,11 +20,6 @@ public class ControllerAeropuerto {
 	@Autowired
 	private AeropuertoService aeropuertoService;
 	
-	@RequestMapping(value = "/principal",method = RequestMethod.GET)
-	public String login() { 
-	
-		return "prueba";
-	}
 	
 	
 	@RequestMapping( value = "/Aeropuertos", method = RequestMethod.GET)

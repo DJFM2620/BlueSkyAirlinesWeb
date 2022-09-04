@@ -28,7 +28,7 @@ public class FabricanteController {
 	 return "/Fabricante/listar";
 	}
 	
-	@RequestMapping( value = "/RegistrarCliente", method = RequestMethod.GET)
+	@RequestMapping( value = "/RegistrarFabricante", method = RequestMethod.GET)
 	public String RegistrarFabricante_GET(Model model) {
 
 	 model.addAttribute("FabricanteAvion", new FabricanteAvion());
