@@ -1,6 +1,7 @@
 package pe.blueskyairlines.ServiceImplements;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -49,5 +50,26 @@ public class ClienteServiceImpl implements ClienteService {
 	public Collection<Cliente> FindAll() {
 
 		return repository.findAll();
+	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public Integer CuentadeVuelos(Integer ID) {
+		
+		return repository.CuentadeVuelos(ID);
+	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public List<Object[]> DestinosRecurrentes(Integer ID) {
+		
+		return repository.DestinosRecurrentes(ID);
+	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public List<Object[]> HistorialVuelos(Integer ID) {
+		
+		return repository.HistorialVuelos(ID);
 	}
 }

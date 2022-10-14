@@ -1,0 +1,90 @@
+@charset "ISO-8859-1";
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	list-style-type: none;
+	text-decoration: none;
+	font-family: 'Poppins', sans-serif;
+}
+
+.sidebar-menu a.active_customer {
+	background: #FFFFFF;
+	color: #085DEF;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	border-radius: 30px 0px 0px 30px;
+}
+
+.cliente-card {
+	width: 80%;
+	min-width: 500px;
+	display: flex;
+	height: 300px;
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-evenly;
+	background: #0082c1;
+	border-radius: 33px;
+	box-shadow: 12px 17px 36px -10px #402726;
+}
+
+.cliente {
+	width: 40%;
+	min-width: 40%;
+	margin-left: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.title h2 {
+	font-size: 2rem;
+	padding-left: 115px;
+}
+
+.charts {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 480px;
+}
+
+#piechart {
+	width: 60%;
+	height: 400px;
+	margin: auto;
+}
+
+.details {
+	display: flex;
+	font-size: 0.9rem;
+	width: 100%;
+	justify-content: center;
+}
+
+.right-n p, .left-n {
+	font-size: 23px;
+	color: #fff;
+}
+
+@media screen and (max-width: 850px) {
+	.charts {
+		flex-direction: column;
+	}
+	#piechart {
+		width: 400px;
+	}
+	.charts {
+		height: 600px;
+	}
+	.cliente-card {
+		height: 280px;
+	}
+	.title h2 {
+		margin-top: 100px;
+		font-size: 20px;
+	}
+}

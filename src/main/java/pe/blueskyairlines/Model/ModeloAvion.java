@@ -19,7 +19,7 @@ public class ModeloAvion {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer modeloid;
 
-	@Column(length = 10)
+	@Column(length = 15)
 	private String nombre;
 
 	@OneToMany(mappedBy = "modelo")

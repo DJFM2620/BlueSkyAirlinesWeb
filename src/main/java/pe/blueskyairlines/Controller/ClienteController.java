@@ -23,14 +23,14 @@ public class ClienteController {
 
 		map.put("bCliente", clienteService.FindAll());
 
-		return "Clientes/Listar";
+		return "/Cliente/Listar";
 	}
 
-	@RequestMapping(value = "/Cliente_registrar", method = RequestMethod.GET)
+	@RequestMapping(value = "/RegistrarCliente", method = RequestMethod.GET)
 	public String RegistrarCliente_GET(Model model) {
 
 		model.addAttribute("Cliente", new Cliente());
-		return "/Cliente/registrar";
+		return "/Cliente/Registrar";
 	}
 
 	@RequestMapping(value = "/Cliente_registrar", method = RequestMethod.POST)
@@ -72,4 +72,26 @@ public class ClienteController {
 		return "redirect:/listado_cliente";
 	}
 
+	@RequestMapping(value = "/Detalle/{clienteid}", method = RequestMethod.GET)
+	public String ClienteDetalleGET(@PathVariable Integer clienteid, Map map) {
+
+		Cliente cliente = clienteService.FindByID(clienteid);
+		
+		int vuelos = clienteService.CuentadeVuelos(clienteid);
+		
+		map.put("Cliente", cliente);
+		map.put("Vuelos", vuelos);
+
+		map.put("dataPieList", clienteService.DestinosRecurrentes(clienteid));
+		
+		return "/Cliente/Detalle";
+	}
+	
+	@RequestMapping(value = "/HistorialVuelos/{clienteid}", method = RequestMethod.GET)
+	public String HistorialVuelos(@PathVariable Integer clienteid, Map map) {
+
+		map.put("Vuelos", clienteService.HistorialVuelos(clienteid));
+		
+		return "/Cliente/HistorialVuelos";
+	}
 }

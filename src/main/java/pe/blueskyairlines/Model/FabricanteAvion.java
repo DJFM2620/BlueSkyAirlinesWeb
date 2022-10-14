@@ -19,7 +19,7 @@ public class FabricanteAvion {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer fabricanteid;
 
-	@Column(length = 10)
+	@Column(length = 15)
 	private String nombre;
 	
 	@OneToMany(mappedBy = "fabricante")

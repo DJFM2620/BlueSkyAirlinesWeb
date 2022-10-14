@@ -1,6 +1,7 @@
 package pe.blueskyairlines.ServiceImplements;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -49,5 +50,17 @@ public class VueloServiceImpl implements VueloService{
 	public Collection<Vuelo> FindAll() {
 		
 		return repository.findAll();
+	}
+
+	@Override
+	public Collection<Vuelo> VuelosPorCiudad(Integer ID) {
+		
+		return repository.VuelosPorCiudad(ID);
+	}
+
+	@Override
+	public List<Object[]> VuelosPorAñoMes(Integer Año, Integer Mes) {
+		
+		return repository.VuelosPorAñoMes(Año, Mes);
 	}
 }
