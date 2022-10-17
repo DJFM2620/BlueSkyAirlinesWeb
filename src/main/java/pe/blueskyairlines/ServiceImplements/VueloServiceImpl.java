@@ -53,14 +53,23 @@ public class VueloServiceImpl implements VueloService{
 	}
 
 	@Override
+	@Transactional(readOnly = true)
 	public Collection<Vuelo> VuelosPorCiudad(Integer ID) {
 		
 		return repository.VuelosPorCiudad(ID);
 	}
 
 	@Override
+	@Transactional(readOnly = true)
 	public List<Object[]> VuelosPorAñoMes(Integer Año, Integer Mes) {
 		
 		return repository.VuelosPorAñoMes(Año, Mes);
+	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public Integer CantidadVuelos() {
+		
+		return repository.CantidadVuelos();
 	}
 }

@@ -72,4 +72,11 @@ public class ClienteServiceImpl implements ClienteService {
 		
 		return repository.HistorialVuelos(ID);
 	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public Integer CantidadClientes() {
+		
+		return repository.CantidadClientes();
+	}
 }

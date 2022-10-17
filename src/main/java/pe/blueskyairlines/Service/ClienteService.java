@@ -18,4 +18,5 @@ public interface ClienteService {
 	public abstract Integer CuentadeVuelos(@Param("clienteID")Integer ID);
 	public abstract List<Object[]> DestinosRecurrentes(@Param("clienteID")Integer ID);
 	public abstract List<Object[]> HistorialVuelos(@Param("clienteID")Integer ID);
+	public abstract Integer CantidadClientes();
 }

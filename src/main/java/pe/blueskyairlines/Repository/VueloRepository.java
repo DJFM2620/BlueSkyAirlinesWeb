@@ -24,4 +24,7 @@ public interface VueloRepository extends JpaRepository<Vuelo, Integer> {
 			+ "WHERE YEAR(fechaida) =:Año AND MONTH(fechaida) = :Mes\r\n"
 			+ "GROUP BY Aeropuerto.aeropuertoid having count(*) > 0 limit 10;", nativeQuery = true)
 	public abstract List<Object[]> VuelosPorAñoMes(@Param("Año") Integer Año, @Param("Mes") Integer Mes);
+	
+	@Query(value = "SELECT count(*) FROM VUELO", nativeQuery = true)
+	public abstract Integer CantidadVuelos();
 }

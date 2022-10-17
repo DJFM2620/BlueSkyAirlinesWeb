@@ -17,4 +17,5 @@ public interface VueloService {
 	
 	public abstract Collection<Vuelo> VuelosPorCiudad(@Param("ciudadid")Integer ID);
 	public abstract List<Object[]> VuelosPorAñoMes(@Param("Año") Integer Año, @Param("Mes") Integer Mes);
+	public abstract Integer CantidadVuelos();
 }
